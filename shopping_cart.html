@@ -86,6 +86,7 @@
                 >Registro</a
               >
               <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="./adminPage.html">Administrador</a>
               <a class="dropdown-item" href="./orders.html">Mis pedidos</a>
             </div>
           </li>
@@ -97,8 +98,8 @@
             >
           </li>
         </ul>
-        <div class="input-group-prepend m1-2">
-          <span class="group-text" style="color: white;">2</span>
+        <div class="input-group-prepend m1-2" id="countCart">
+          <span class="group-text" style="color: white;" >2</span>
         </div>
       </div>
     </nav>
@@ -313,8 +314,8 @@
 
     <div class="container mt-5">
       <div class="row">
-        <div class="container col-lg-8 col-md-7 col-sm-12">
-          <div class="media border border-muted">
+        <div class="container col-lg-8 col-md-7 col-sm-12" id="cart">
+          <!-- <div class="media border border-muted">
             <div class="media-body mx-3 my-3">
               <h5 class="mt-0" style="color: lightcoral">
                 Anillo InfinityRose 18K
@@ -356,9 +357,9 @@
                 width="150px"
               />
             </div>
-          </div>
+          </div> -->
 
-          <div class="media border border-muted">
+          <!-- <div class="media border border-muted">
             <div class="media-body mx-3 my-2">
               <h5 class="mt-0" style="color: lightcoral">
                 Argollas UnionRose 18K
@@ -400,44 +401,41 @@
                 width="150px"
               />
             </div>
-          </div>
+          </div> -->
         </div>
-        <div class="container col-lg-4 col-md-5 col-sm-6">
+        <div class="container col-lg-4 col-md-5 col-sm-6" >
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title" style="color: lightcoral">
+              <div id="producto"></div>
+              <!-- <h5 class="card-title" style="color: lightcoral">
                 Total de Compra
               </h5>
               <div
                 style="
-                  border-top: 1px solid#888;
+                  border-top: 1px solid #888;
                   padding-top: 15px;
                   font-size: 85%;
                 "
-              >
-                <p class="card-text">
+                id="product"
+              > -->
+                <!-- <p class="card-text">
                   Anillo InfinityRose: 1 x 9831.35: 9831.35
-                </p>
-                <p class="card-text">
+                </p> -->
+                <!-- <p class="card-text">
                   Argollas UnionRose: 2 x 10694.00: 10694.00
-                </p>
-                <p class="card-text">Costo de envio: 800.00</p>
-                <div
+                </p> -->
+                <!-- <p class="card-text">Costo de envio: 800.00</p> -->
+                <!-- <div
                   style="
-                    border-top: 1px solid#888;
+                    border-top: 1px solid #888;
                     padding-top: 15px;
                     font-size: 85%;
                   "
-                ></div>
-                <p class="card-text">Monto a pagar: 21325.35</p>
-                <a
-                  href="./orders.html"
-                  class="btn btn-outline-success col-12 mb-2 btn-lg"
-                  >Pagar</a
-                >
-                <a href="./index.html" class="btn btn-outline-danger col-12"
-                  >Cancelar</a
-                >
+                  id="total"
+                ></div> -->
+                <!-- <p class="card-text">Monto a pagar: 21325.35</p> -->
+                <a href="./orders.html" class="btn btn-outline-success col-12 mb-2 btn-lg">Pagar</a>
+                <a href="./index.html" class="btn btn-outline-danger col-12">Cancelar</a>
               </div>
             </div>
           </div>
@@ -445,6 +443,7 @@
       </div>
     </div>
 
+    <script src="../javascript/shoppingCart.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script

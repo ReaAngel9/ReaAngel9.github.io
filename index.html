@@ -24,6 +24,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <style>
+      .activo{
+        background-color: lightcoral;
+        color: pink;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -41,10 +47,11 @@
       </button>
       <div class="row" style="width: 100%">
         <div class="col-12">
-          <form class="form-inline my-2 my-lg-0">
+          <form class="form-inline my-2 my-lg-0" onsubmit="Search()">
             <input
               type="text"
               class="form-control"
+              id="searchBar"
               placeholder="Encuentra de todo empieza a buscar"
               style="width: 70%"
             />
@@ -53,7 +60,7 @@
               id="buscar"
               type="submit"
               style="border-color: white; color: white; size-adjust: 100%"
-            >
+              onsubmit="Search()">
               Buscar
             </button>
           </form>
@@ -87,6 +94,7 @@
                 >Registro</a
               >
               <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="./adminPage.html">Administrador </a>
               <a class="dropdown-item" href="./orders.html">Mis pedidos</a>
             </div>
           </li>
@@ -158,9 +166,8 @@
 
     <!-- Cartas -->
     <div class="container mb-5">
-      <div class="row mt-5">
-        <div class="card col-lg-3 col-md-4 col-sm-6">
-          <!-- <div class="card" style="width: 18rem;"> -->
+      <div class="row mt-5" id="indexCards">
+        <!-- <div class="card col-lg-3 col-md-4 col-sm-6">
           <img
             class="card-img-top"
             src="https://kristalljoyeria.com/wp-content/uploads/2020/06/1-7-600x600.png"
@@ -178,10 +185,8 @@
               1 x $9,831.35
             </p>
           </div>
-          <!-- </div> -->
-        </div>
-        <div class="card col-lg-3 col-md-4 col-sm-6">
-          <!-- <div class="card" style="width: 18rem;"> -->
+        </div> -->
+        <!-- <div class="card col-lg-3 col-md-4 col-sm-6">
           <img
             class="card-img-top"
             src="https://cdn.shopify.com/s/files/1/1315/5123/products/SDPRE-2232_1fb469c9-a2d0-4fe2-8315-c437e7d9b2d9_480x.png?v=1590087737"
@@ -199,10 +204,8 @@
               1 x $7,090.00
             </p>
           </div>
-          <!-- </div> -->
         </div>
         <div class="card col-lg-3 col-md-4 col-sm-6">
-          <!-- <div class="card" style="width: 18rem;"> -->
           <img
             class="card-img-top"
             src="https://cdn.shopify.com/s/files/1/0411/6083/5237/products/BBICMAN501C23_1_2400x.png?v=1617216341"
@@ -220,10 +223,8 @@
               1 x $8,312.00
             </p>
           </div>
-          <!-- </div> -->
         </div>
         <div class="card col-lg-3 col-md-4 col-sm-6">
-          <!-- <div class="card" style="width: 18rem;"> -->
           <img
             class="card-img-top"
             src="https://cdn.shopify.com/s/files/1/1315/5123/products/SDPRE-2140_e4024e66-3e40-465e-9299-9f3d2d30d91b_480x.png?v=1590087940"
@@ -241,13 +242,11 @@
               1 x $9,012.00
             </p>
           </div>
-          <!-- </div> -->
-        </div>
+        </div> -->
       </div>
 
       <div class="row">
-        <div class="card col-lg-3 col-md-4 col-sm-6">
-          <!-- <div class="card" style="width: 18rem;"> -->
+        <!-- <div class="card col-lg-3 col-md-4 col-sm-6">
           <img
             class="card-img-top"
             src="https://bongainjoyas.cl/wp-content/uploads/2019/10/09-600x597.png"
@@ -265,10 +264,8 @@
               2 x $10,694.00
             </p>
           </div>
-          <!-- </div> -->
-        </div>
-        <div class="card col-lg-3 col-md-4 col-sm-6">
-          <!-- <div class="card" style="width: 18rem;"> -->
+        </div> -->
+        <!-- <div class="card col-lg-3 col-md-4 col-sm-6">
           <img
             class="card-img-top"
             src="https://medusajoyas.com/3490-home_default/argollas-de-matrimonio-dorado-y-plateado-en-acero-inoxidable.jpg"
@@ -286,10 +283,8 @@
               2 x $ 9,658.80
             </p>
           </div>
-          <!-- </div> -->
         </div>
         <div class="card col-lg-3 col-md-4 col-sm-6">
-          <!-- <div class="card" style="width: 18rem;"> -->
           <img
             class="card-img-top"
             src="https://www.nupciasmagazine.com/wp-content/uploads/2020/12/BZR6.jpg"
@@ -307,10 +302,8 @@
               2 x $20,572.69
             </p>
           </div>
-          <!-- </div> -->
         </div>
         <div class="card col-lg-3 col-md-4 col-sm-6">
-          <!-- <div class="card" style="width: 18rem;"> -->
           <img
             class="card-img-top"
             src="https://limajoya.com.pe/images/stories/virtuemart/product/resized/Aros%20de%20matrimonio%20oro%20blanco%2018k%20LJAU1209_400x300.png"
@@ -328,18 +321,17 @@
               2 x $39,144
             </p>
           </div>
-          <!-- </div> -->
-        </div>
+        </div> -->
       </div>
     </div>
 
-    <nav aria-label="...">
+    <!-- <nav aria-label="...">
       <ul class="pagination justify-content-center">
         <li class="page-item disabled">
           <a class="page-link" href="#" tabindex="-1">Previous</a>
-        </li>
+        </li> 
         <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item active">
+        <li class="page-item ">
           <a class="page-link" href="#"
             >2 <span class="sr-only">(current)</span></a
           >
@@ -347,11 +339,39 @@
         <li class="page-item">
           <a class="page-link" href="#">3</a>
         </li>
-        <li class="page-item">
+         <li class="page-item">
           <a class="page-link" href="#">Next</a>
-        </li>
+        </li> 
+      </ul>
+    </nav> -->
+
+    <nav aria-label="Page navigation" >
+      <ul class="pagination justify-content-center" id="pages">
+        <li class="page-item active" ><a class="page-link" href="#" >1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
       </ul>
     </nav>
+
+    <!-- Modal agregar producto a carrito -->
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" style="color: lightcoral;">Escoge la cantidad a agregar:</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body" id="cantidad">
+            <input type="number" class="form-control" value="1" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" style="background-color: lightcoral; color: white;" onclick="addShoppingCartInfo()">Add to Cart</button>
+            <button type="button " class="btn btn-secondary btn-danger" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Modal “Mi Cuenta” > “Ingresar” -->
     <div
@@ -375,8 +395,8 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form action="">
-            <div class="modal-body needs-validation">
+          <form class="modal-body" onsubmit="login()">
+            <div class="needs-validation" >
               <div class="container-fluid">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Correo</label>
@@ -385,7 +405,7 @@
                     <input
                       type="email"
                       class="form-control"
-                      id="exampleFormControlInput1"
+                      id="email"
                       placeholder="Ingresa tu correo"
                       required
                     />
@@ -554,7 +574,9 @@
       </div>
     </div>
 
-    <script>
+    <script src="../javascript/indexJS.js"></script>
+
+    <!-- <script>
       $("#exampleModal").on("show.bs.modal", (event) => {
         var button = $(event.relatedTarget);
         var modal = $(this);
@@ -568,7 +590,7 @@
         var modal = $(this);
         // Use above variables to manipulate the DOM
       });
-    </script>
+    </script> -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
